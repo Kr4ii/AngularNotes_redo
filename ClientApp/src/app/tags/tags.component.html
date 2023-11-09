@@ -1,1 +1,40 @@
-<p>tags works!</p>
+<!--Добавить новый тег-->
+<div class="card text-dark mt-2" style="background-color: snow ">
+  <div class="container mt-4">
+    <form class="container">
+
+      <div class="input-group mb-3">
+        <textarea class="form-control" rows="1" id="note-text" name="text"></textarea>
+        <button type="submit" class="btn btn-primary">+</button>
+      </div>          
+
+    </form>
+  </div>
+</div>
+
+<!--Список тегов-->
+<div *ngFor="let tag of tagsList">
+
+  <div class="card mt-2">
+    <div class="container mt-2 mb-2">
+      <div class="row">
+
+        <div class="col">          
+          <p class="h5 text-center">{{tag.tagText}}</p>
+        </div>
+
+        <div class="col-sm-2">                     
+            <div class="row text-center">
+              <button type="button" class="btn btn-danger btn-sm">Удалить</button>
+            </div>          
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer-->
+<div id="footer" class="footer row mt-4">
+</div>

@@ -1,5 +1,5 @@
 <!--Заголовки-->
-<div class="container mt-5">
+<div class="container mt-4">
   <div class="row">
 
     <div class="col-sm-6">
@@ -7,46 +7,43 @@
     </div>
 
     <div class="col-sm-2">
-      <h3 class="display-6">тэги</h3>
+      <h3 class="display-6">теги</h3>
     </div>
 
     <div class="col-sm-2">
       <h3 class="display-6">напоминание</h3>
-    </div>   
+    </div>
 
   </div>
 </div>
 
 <!--Добавить новую заметку-->
-<div class="card text-dark mt-2" style="background-color: snow ">
+<div class="card mt-2" style="background-color: snow ">
   <div class="container mt-4">
     <form class="row">
 
       <div class="col-sm-5">
-        <div class="container mt-4">
-          <div class="mb-3 mt-3">
-            <textarea class="form-control" rows="5" id="note-text" name="text"></textarea>
+        <div class="container">
+          <div class="mb-3">
+            <textarea class="form-control" rows="1" id="note-text" name="text"></textarea>
           </div>
         </div>
       </div>
 
       <div class="col-sm-3">
-        <select class="form-select mt-5">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
+        <select class="form-select" *ngFor="let tag of tagsList">
+          <option>{{tag.tagText}}</option>          
         </select>
       </div>
 
       <div class="col-sm-3">
-        <div class="md-form mt-5" id="customDays">
-          <input  type="datetime-local" id="datetime-reminder" class="form-control">
+        <div class="md-form" id="customDays">
+          <input type="datetime-local" id="datetime-reminder" class="form-control">
           <i class="fas fa-calendar input-prefix" tabindex=0></i>
         </div>
       </div>
 
-      <div class="col-sm-1 mt-5">
+      <div class="col-sm-1">
         <button type="submit" class="btn btn-primary">+</button>
       </div>
 
@@ -71,7 +68,7 @@
         </div>
 
         <div class="col-sm-2">
-          <p>{{note.reminderDate | date : 'd.M.yyyy, hh:mm'}}</p>
+          <p>{{note.reminderDate | date : 'd.M.yyyy, HH:mm'}}</p>
         </div>
 
         <div class="col-sm-2">
@@ -83,10 +80,14 @@
               <button type="button" class="btn btn-danger btn-sm">Удалить</button>
             </div>
           </div>
-          </div>
-
         </div>
+
       </div>
+    </div>
   </div>
 
+</div>
+
+<!-- Footer-->
+<div id="footer" class="footer row mt-4">
 </div>
