@@ -5,7 +5,7 @@ using AngularNotes;
 namespace AngularNotes.Controllers
 {
     [ApiController]
-    [Route("[controller]")]    
+    [Route("api/[controller]")]    
     public class WebNotesController : ControllerBase
     {
         private WebNotesContext db = new WebNotesContext();

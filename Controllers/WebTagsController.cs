@@ -5,7 +5,7 @@ using AngularNotes;
 namespace AngularNotes.Controllers
 {
     [ApiController]
-    [Route("[controller]")]    
+    [Route("api/[controller]")]    
     public class WebTagsController : ControllerBase
     {
         private WebNotesContext db = new WebNotesContext();

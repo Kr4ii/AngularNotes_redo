@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NotebookService } from '../services/notebook.service';
 /*import { Notebook } from '../services/notebook.service';*/
 
 @Component({
@@ -8,12 +9,16 @@ import { Component } from '@angular/core';
 })
 export class NotesComponent {
 
-  public notesList = [{}];
+ // public notesList = [{}];
 
-/*  public notes = [{}];
+  public notesList: [{ id: number; note: string; reminderDate: Date; header: string; }] | undefined;
 
-  constructor(public notebook: Notebook) {
-    this.notes = notebook.notes
-  }*/
+
+  constructor(public notebook: NotebookService) {
+    //this.notes =
+      notebook.getNotes().subscribe(notes => {
+        this.notesList = notes;
+    })
+  }
 
 }
