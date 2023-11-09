@@ -4,6 +4,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
+//CORS add policy
+builder.Services.AddCors(options => options.AddPolicy(name:"FrontendUI", policy => 
+{ 
+    policy.WithOrigins("https://localhost:44442").AllowAnyMethod().AllowAnyHeader(); 
+}));
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,6 +24,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+//CORS activate
+app.UseCors("FrontendUI");
 
 app.MapControllerRoute(
     name: "default",

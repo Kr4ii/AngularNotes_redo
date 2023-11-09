@@ -1,5 +1,92 @@
-<h4 class="text-md-center m-4">Ваши заметки</h4>
+<!--Заголовки-->
+<div class="container mt-5">
+  <div class="row">
 
-<div *ngFor ="let note of notesList">
-  {{note}}
+    <div class="col-sm-6">
+      <h3 class="display-6">заметки</h3>
+    </div>
+
+    <div class="col-sm-2">
+      <h3 class="display-6">тэги</h3>
+    </div>
+
+    <div class="col-sm-2">
+      <h3 class="display-6">напоминание</h3>
+    </div>   
+
+  </div>
+</div>
+
+<!--Добавить новую заметку-->
+<div class="card text-dark mt-2" style="background-color: snow ">
+  <div class="container mt-4">
+    <form class="row">
+
+      <div class="col-sm-5">
+        <div class="container mt-4">
+          <div class="mb-3 mt-3">
+            <textarea class="form-control" rows="5" id="note-text" name="text"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <select class="form-select mt-5">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="md-form mt-5" id="customDays">
+          <input  type="datetime-local" id="datetime-reminder" class="form-control">
+          <i class="fas fa-calendar input-prefix" tabindex=0></i>
+        </div>
+      </div>
+
+      <div class="col-sm-1 mt-5">
+        <button type="submit" class="btn btn-primary">+</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!--Список заметок-->
+<div *ngFor="let note of notesList">
+
+  <div class="card text-dark mt-2">
+    <div class="container mt-4">
+      <div class="row">
+
+        <div class="col-sm-6">
+          <h3>{{note.noteHeader}}</h3>
+          <p>{{note.noteText}}</p>
+        </div>
+
+        <div class="col-sm-2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        </div>
+
+        <div class="col-sm-2">
+          <p>{{note.reminderDate | date : 'd.M.yyyy, hh:mm'}}</p>
+        </div>
+
+        <div class="col-sm-2">
+          <div class="container">
+            <div class="row mt-2">
+              <button type="button" class="btn btn-primary btn-sm">Редактировать</button>
+            </div>
+            <div class="row mt-2">
+              <button type="button" class="btn btn-danger btn-sm">Удалить</button>
+            </div>
+          </div>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
 </div>

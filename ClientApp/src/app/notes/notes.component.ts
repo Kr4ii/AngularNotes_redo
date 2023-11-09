@@ -11,7 +11,7 @@ export class NotesComponent {
 
  // public notesList = [{}];
 
-  public notesList: [{ id: number; note: string; reminderDate: Date; header: string; }] | undefined;
+  public notesList: [{ noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }] | undefined;
 
 
   constructor(public notebook: NotebookService) {
