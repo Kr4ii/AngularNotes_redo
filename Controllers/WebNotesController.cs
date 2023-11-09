@@ -17,8 +17,6 @@ namespace AngularNotes.Controllers
             _logger = logger;
         }
 
-
-
         [HttpGet]
         public IEnumerable<Note> GetNotes()
         {
