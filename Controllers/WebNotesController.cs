@@ -20,7 +20,12 @@ namespace AngularNotes.Controllers
         [HttpGet]
         public IEnumerable<Note> GetNotes()
         {
-            return db.Notes.ToArray();
+            var notes = db.Notes;
+            /*foreach (var row in notes)
+            {
+                row.NotesTags = db.Tags.Where(t => t.TagId == db.NotesTags.FirstOrDefault(i => i.NoteId == row.NoteId).TagId) as List<NotesTag>;
+            }*/
+            return notes;
         }
  
         [HttpPost]

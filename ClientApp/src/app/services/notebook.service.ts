@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of, shareReplay } from 'rxjs';
 
@@ -23,6 +23,12 @@ export class NotebookService {
 
   getTags(): Observable<[{ tagId: number; tagText: string; notesTags: [] }]> {
     return this.http.get<[{ tagId: number; tagText: string; notesTags: [] }]>('https://localhost:7185/api/webtags');
+  }
+
+  getNoteTags(noteId: number ): Observable<[{ id: number, tagId: number; noteId: number }]> {
+    const params = new HttpParams()
+      .set('noteId', noteId);
+    return this.http.get<[{ id: number, tagId: number; noteId: number }]>('https://localhost:7185/api/notetags', {params});
   }
 
 }

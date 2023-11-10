@@ -19,20 +19,20 @@
 
 <!--Добавить новую заметку-->
 <div class="card mt-2" style="background-color: snow ">
-  <div class="container mt-4">
-    <form class="row">
+  <form class="container mt-4">
+    <div class="row">
 
       <div class="col-sm-5">
         <div class="container">
           <div class="mb-3">
-            <textarea class="form-control" rows="1" id="note-text" name="text"></textarea>
+            <textarea class="form-control" rows="1" id="note-text" placeholder="Введите заголовок" name="text"></textarea>
           </div>
         </div>
       </div>
 
       <div class="col-sm-3">
         <select class="form-select" *ngFor="let tag of tagsList">
-          <option>{{tag.tagText}}</option>          
+          <option>{{tag.tagText}}</option>
         </select>
       </div>
 
@@ -47,8 +47,23 @@
         <button type="submit" class="btn btn-primary">+</button>
       </div>
 
-    </form>
-  </div>
+    </div>
+
+
+      
+    <div class="row">
+
+      <div class="col-sm-5">
+        <div class="container">
+          <div class="mb-3">
+            <textarea class="form-control" rows="1" id="note-text" placeholder="Введите текст заметки" name="text"></textarea>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
 </div>
 
 <!--Список заметок-->
@@ -64,7 +79,7 @@
         </div>
 
         <div class="col-sm-2">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+          <!--<p>{{getNoteTags('note.noteId')}}</p>-->
         </div>
 
         <div class="col-sm-2">
