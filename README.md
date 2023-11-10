@@ -1,7 +1,7 @@
 # AngularNotes
-Приложение можно запустить из VisualStudio, открыв проект и нажав Ctrl+F5. 
+Приложение можно запустить из VisualStudio, открыв проект (решение) "AngularNotes.sln" и нажав Ctrl+F5. 
 Для заполения базы данных можно использовать SQL скрипт "sqlCreate.sql".
-Строка для подключения к БД:
+Строка для подключения к БД :
 
 "Host=localhost;Port=5432;Database=web_notes;Username=postgres;Password=DnotesB".
 
