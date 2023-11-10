@@ -30,10 +30,12 @@
         </div>
       </div>
 
-      <div class="col-sm-3">
-        <select class="form-select" *ngFor="let tag of tagsList">
-          <option>{{tag.tagText}}</option>
+      <div class="col-sm-3 text-center">
+
+        <select [(ngModel)]="selected" name="tags" placeholder="select" (ngModelChange)="onOptionsSelected()">
+          <option *ngFor="let tag of tagsList" [ngValue]="tag">{{tag.tagText}}</option>
         </select>
+
       </div>
 
       <div class="col-sm-3">

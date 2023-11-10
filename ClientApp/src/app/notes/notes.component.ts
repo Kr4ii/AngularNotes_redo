@@ -13,9 +13,11 @@ export class NotesComponent {
 
 
   public notesList: [{ noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }] | undefined;
-  public tagsList: [{ tagId: number; tagText: string; notesTags: [] }] | undefined;
+  public tagsList!: [{ tagId: number; tagText: string; notesTags: [] }];
   public noteTagsList: [{ id: number; tagId: number; noteId: number; }] | undefined;
   public noteId!: number;
+  selected: any;
+  filtered: any;
 /*  public getNoteTags(noteId: number) {
     return this.tagsList?.filter(x => x.tagId ==
                                                  this.noteTagsList["tagId"])
@@ -34,8 +36,14 @@ export class NotesComponent {
     notebook.getNoteTags(this.noteId).subscribe(tags => {
       this.noteTagsList = tags;
     })
-  
 
-    }
+  }
 
+  //список тегов
+  onOptionsSelected() {
+    console.log(this.selected);
+    this.filtered = this.tagsList.filter(t => t.tagText == this.selected);
+  }
 }
+
+
