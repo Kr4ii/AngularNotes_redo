@@ -33,9 +33,9 @@ export class NotesComponent {
       this.tagsList = tags;
     })
 
-    notebook.getNoteTags(this.noteId).subscribe(tags => {
-      this.noteTagsList = tags;
-    })
+    //notebook.getNoteTags(this.noteId).subscribe(tags => {
+    //  this.noteTagsList = tags;
+    //})
 
   }
 
@@ -43,6 +43,13 @@ export class NotesComponent {
   onOptionsSelected() {
     console.log(this.selected);
     this.filtered = this.tagsList.filter(t => t.tagText == this.selected);
+  }
+
+  onNoteCreate(note: [{/* noteId: number;*/ noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]) {
+    this.notebook.saveNote(note);
+    this.notebook.getNotes().subscribe(notes => {
+      this.notesList = notes;
+    })
   }
 }
 

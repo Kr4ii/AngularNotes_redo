@@ -19,20 +19,20 @@
 
 <!--Добавить новую заметку-->
 <div class="card mt-2" style="background-color: snow ">
-  <form class="container mt-4">
+  <form #noteForm="ngForm" (ngSubmit)="onNoteCreate(noteForm.value)" class="container mt-4">
     <div class="row">
 
       <div class="col-sm-5">
         <div class="container">
           <div class="mb-3">
-            <textarea class="form-control" rows="1" id="note-text" placeholder="Введите заголовок" name="text"></textarea>
+            <input class="form-control" ngModel rows="1" id="note-text" placeholder="Введите заголовок" name="noteHeader">
           </div>
         </div>
       </div>
 
       <div class="col-sm-3 text-center">
 
-        <select [(ngModel)]="selected" name="tags" placeholder="select" (ngModelChange)="onOptionsSelected()">
+        <select [(ngModel)]="selected" ngModel name="noteTag" placeholder="select" (ngModelChange)="onOptionsSelected()">
           <option *ngFor="let tag of tagsList" [ngValue]="tag">{{tag.tagText}}</option>
         </select>
 
@@ -40,7 +40,7 @@
 
       <div class="col-sm-3">
         <div class="md-form" id="customDays">
-          <input type="datetime-local" id="datetime-reminder" class="form-control">
+          <input type="datetime-local" ngModel id="datetime-reminder" class="form-control" name="noteDate">
           <i class="fas fa-calendar input-prefix" tabindex=0></i>
         </div>
       </div>
@@ -50,15 +50,13 @@
       </div>
 
     </div>
-
-
-      
+          
     <div class="row">
 
       <div class="col-sm-5">
         <div class="container">
           <div class="mb-3">
-            <textarea class="form-control" rows="1" id="note-text" placeholder="Введите текст заметки" name="text"></textarea>
+            <input class="form-control" ngModel rows="1" id="note-text" placeholder="Введите текст заметки" name="noteText">
           </div>
         </div>
       </div>

@@ -1,14 +1,14 @@
 <!--Добавить новый тег-->
 <div class="card text-dark mt-2" style="background-color: snow ">
   <div class="container mt-4">
-    <form class="container">
+    <div class="container">
 
       <form #tagForm="ngForm" (ngSubmit)="onTagCreate(tagForm.value)" class="input-group mb-3">
        <input class="form-control" ngModel rows="1" id="tag-text" placeholder="Введите текст тега" name="tagText">
         <button type="submit" class="btn btn-primary">+</button>
       </form>          
 
-    </form>
+    </div>
   </div>
 </div>
 

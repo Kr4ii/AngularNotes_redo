@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TagbookService } from '../services/tagbook.service';
+import { waitForAsync } from '@angular/core/testing';
 
 @Component({
   selector: 'app-tags',
@@ -32,6 +33,10 @@ export class TagsComponent {
   onTagCreate(tag: { tagText: string }) {
 
     this.tagbook.saveTag(tag);
+    this.tagbook.getTags()
+      .subscribe(tags => {
+      this.tagsList = tags;
+      });
   }
 
   }

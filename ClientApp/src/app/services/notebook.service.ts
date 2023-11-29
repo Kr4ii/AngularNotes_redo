@@ -16,9 +16,11 @@ export class NotebookService {
     return this.http.get<[{ noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]>('https://localhost:7185/api/webnotes');
   }
 
-  saveNotes(notes: [{ noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]): Observable<void> {
-    this.notes = this.http.post<void>('https://localhost:7185/api/webnotes', notes).pipe(shareReplay(1));
-    return this.notes;
+  saveNote(note: [{/* noteId: number;*/ noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]){
+    console.log(note);
+    this.http.post('https://localhost:7185/api/webnotes', note).subscribe((res) => {
+      console.log(res);
+    });
   }
 
   getTags(): Observable<[{ tagId: number; tagText: string; notesTags: [] }]> {
