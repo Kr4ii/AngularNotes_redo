@@ -9,7 +9,7 @@ builder.Services.AddCors(options => options.AddPolicy(name:"FrontendUI", policy 
 { 
     policy.WithOrigins("https://localhost:44442").AllowAnyMethod().AllowAnyHeader(); 
 }));
-
+builder.Configuration.GetConnectionString("Default Connection");
 
 var app = builder.Build();
 

@@ -25,26 +25,29 @@ namespace AngularNotes.Controllers
         }
 
         [HttpPost]
-        public void AddTag([FromBody] Tag tag)
+        public IEnumerable<Tag> AddTag([FromBody] Tag tag)
         {
             db.Tags.Add(tag);
             db.SaveChanges();
+            return db.Tags.ToArray();
         }
 
         [HttpPut("{id}")]
-        public void ChangeTag(int id, [FromBody] Tag tag)
+        public IEnumerable<Tag> ChangeTag(int id, [FromBody] Tag tag)
         {
             var tagRow = db.Tags.Where(n => n.TagId == id).FirstOrDefault();
             tagRow = tag;
             db.SaveChanges();
+            return db.Tags.ToArray();
         }
 
         [HttpDelete("{id}")]
-        public void DeleteTag(int id)
+        public IEnumerable<Tag> DeleteTag(int id)
         {
             var tagRow = db.Tags.Where(n => n.TagId == id).FirstOrDefault();
             db.Tags.Remove(tagRow);
             db.SaveChanges();
+            return db.Tags.ToArray();
         }
     }
 }
