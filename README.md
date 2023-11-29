@@ -1,11 +1,11 @@
 # AngularNotes
-Приложение можно запустить из VisualStudio, открыв проект (решение) "AngularNotes.sln" и нажав Ctrl+F5. 
-Для заполения базы данных можно использовать SQL скрипт "sqlCreate.sql".
-Строка для подключения к БД :
+РџСЂРёР»РѕР¶РµРЅРёРµ РјРѕР¶РЅРѕ Р·Р°РїСѓСЃС‚РёС‚СЊ РёР· VisualStudio, РѕС‚РєСЂС‹РІ РїСЂРѕРµРєС‚ (СЂРµС€РµРЅРёРµ) "AngularNotes.sln" Рё РЅР°Р¶Р°РІ Ctrl+F5. 
+Р”Р»СЏ Р·Р°РїРѕР»РµРЅРёСЏ Р±Р°Р·С‹ РґР°РЅРЅС‹С… РјРѕР¶РЅРѕ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ SQL СЃРєСЂРёРїС‚ "sqlCreate.sql".
+РЎС‚СЂРѕРєР° РґР»СЏ РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р” :
 
 "Host=localhost;Port=5432;Database=web_notes;Username=postgres;Password=DnotesB".
 
-Web API можно найти по адресам:
+Web API РјРѕР¶РЅРѕ РЅР°Р№С‚Рё РїРѕ Р°РґСЂРµСЃР°Рј:
 - https://localhost:7185/api/webnotes
 - https://localhost:7185/api/webtags
 - https://localhost:7185/api/notestags
