@@ -18,17 +18,8 @@ export class TagsComponent {
       this.tagsList = tags;
     });
 
-    //tagbook.saveTag(this.tagRow).subscribe((res) => {
-    //  console.log(res);
-    //});
    } 
 
-//  getTagFormData(data: any)
-//  {
-///*    console.warn(data)
-//    this.tagbook.tag
-//    this.tagbook.saveTag()*/S
-//  }
 
   onTagCreate(tag: { tagText: string }) {
 
@@ -37,6 +28,13 @@ export class TagsComponent {
       .subscribe(tags => {
       this.tagsList = tags;
       });
+  }
+
+  onDeleteTag(tagId: number) {
+    this.tagbook.deleteTag(tagId);
+    this.tagbook.getTags().subscribe(tags => {
+      this.tagsList = tags;
+    });
   }
 
   }

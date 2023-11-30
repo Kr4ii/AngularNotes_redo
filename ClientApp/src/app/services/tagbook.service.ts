@@ -22,6 +22,10 @@ export class TagbookService {
     });
   }
 
+  deleteTag(tagId: number) {
+    console.log(tagId)
+    this.http.delete('https://localhost:7185/api/webtags/'+ tagId.toString()).subscribe()
+  }
 
 
 }

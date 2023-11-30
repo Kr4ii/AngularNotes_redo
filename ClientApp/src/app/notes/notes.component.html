@@ -32,7 +32,7 @@
 
       
 
-        <select class="col-sm-3 mb-3" [(ngModel)]="selected" ngModel name="noteTag" placeholder="select" (ngModelChange)="onOptionsSelected()">
+        <select class="col-sm-3 mb-3" [(ngModel)]="selected" ngModel name="noteTag" placeholder="Выберите тег" (ngModelChange)="onOptionsSelected()">
           <option *ngFor="let tag of tagsList" [ngValue]="tag">{{tag.tagText}}</option>
         </select>
 
@@ -83,6 +83,7 @@
         </div>
 
         <div class="col-sm-2">
+          <br />
           <p>{{note.reminderDate | date : 'd.M.yyyy, HH:mm'}}</p>
         </div>
 
@@ -104,5 +105,5 @@
 </div>
 
 <!-- Footer-->
-<div id="footer" class="footer row mt-4">
+<div id="footer" class="footer row mt-4 mb-2">
 </div>
