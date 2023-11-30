@@ -51,6 +51,6 @@ namespace AngularNotes.Controllers
             db.SaveChanges();
         }
 
-        //TO DO получить теги заметки
+        
     }
 }

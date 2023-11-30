@@ -2,11 +2,11 @@
 <div class="container mt-4">
   <div class="row">
 
-    <div class="col-sm-6">
+    <div class="col-sm-5">
       <h3 class="display-6">заметки</h3>
     </div>
 
-    <div class="col-sm-2">
+    <div class="col-sm-3">
       <h3 class="display-6">теги</h3>
     </div>
 
@@ -30,13 +30,13 @@
         </div>
       </div>
 
-      <div class="col-sm-3 text-center">
+      
 
-        <select [(ngModel)]="selected" ngModel name="noteTag" placeholder="select" (ngModelChange)="onOptionsSelected()">
+        <select class="col-sm-3 mb-3" [(ngModel)]="selected" ngModel name="noteTag" placeholder="select" (ngModelChange)="onOptionsSelected()">
           <option *ngFor="let tag of tagsList" [ngValue]="tag">{{tag.tagText}}</option>
         </select>
 
-      </div>
+      
 
       <div class="col-sm-3">
         <div class="md-form" id="customDays">
@@ -53,7 +53,7 @@
           
     <div class="row">
 
-      <div class="col-sm-5">
+      <div class="col">
         <div class="container">
           <div class="mb-3">
             <input class="form-control" ngModel rows="1" id="note-text" placeholder="Введите текст заметки" name="noteText">
@@ -70,7 +70,7 @@
 <div *ngFor="let note of notesList">
 
   <div class="card text-dark mt-2">
-    <div class="container mt-4">
+    <div class="container mt-4 mb-2">
       <div class="row">
 
         <div class="col-sm-6">
@@ -79,14 +79,14 @@
         </div>
 
         <div class="col-sm-2">
-          <!--<p>{{getNoteTags('note.noteId')}}</p>-->
+          {{getNoteTags(note.noteId)}}
         </div>
 
         <div class="col-sm-2">
           <p>{{note.reminderDate | date : 'd.M.yyyy, HH:mm'}}</p>
         </div>
 
-        <div class="col-sm-2">
+        <div class="col-sm-2 mb-2">
           <div class="container">
             <div class="row mt-2">
               <button type="button" class="btn btn-primary btn-sm">Редактировать</button>

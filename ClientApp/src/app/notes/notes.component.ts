@@ -18,10 +18,10 @@ export class NotesComponent {
   public noteId!: number;
   selected: any;
   filtered: any;
-/*  public getNoteTags(noteId: number) {
-    return this.tagsList?.filter(x => x.tagId ==
-                                                 this.noteTagsList["tagId"])
-  };*/
+  //public getNoteTags(noteId: number) {
+  //  return this.tagsList?.filter(x => x.tagId ==
+  //    this.noteTagsList[{"tagId"}])
+  //};
 
   constructor(public notebook: NotebookService) {
 
@@ -50,6 +50,10 @@ export class NotesComponent {
     this.notebook.getNotes().subscribe(notes => {
       this.notesList = notes;
     })
+  }
+
+  getNoteTags(noteId: number) {
+    //TO DO получить теги заметки
   }
 }
 
