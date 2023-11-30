@@ -33,4 +33,8 @@ export class NotebookService {
     return this.http.get<[{ id: number, tagId: number; noteId: number }]>('https://localhost:7185/api/notetags', {params});
   }
 
+  deleteNote(noteId: number) {
+    console.log(noteId);
+    this.http.delete('https://localhost:7185/api/webnotes/' + noteId.toString()).subscribe();
+  }
 }

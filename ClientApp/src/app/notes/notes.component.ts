@@ -55,6 +55,14 @@ export class NotesComponent {
   getNoteTags(noteId: number) {
     //TO DO получить теги заметки
   }
+
+  onDeleteNote(noteId: number) {
+    this.notebook.deleteNote(noteId);
+    this.notebook.getNotes().subscribe(notes => {
+      this.notesList = notes;
+    })
+
+  }
 }
 
 
