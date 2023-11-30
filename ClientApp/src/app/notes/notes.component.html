@@ -29,15 +29,11 @@
           </div>
         </div>
       </div>
-
-      
-
-        <select class="col-sm-3 mb-3" [(ngModel)]="selected" ngModel name="noteTag" placeholder="Выберите тег" (ngModelChange)="onOptionsSelected()">
-          <option *ngFor="let tag of tagsList" [ngValue]="tag">{{tag.tagText}}</option>
-        </select>
-
-      
-
+         
+      <select class="col-sm-3 mb-3" [(ngModel)]="selected" ngModel name="noteTag" placeholder="Выберите тег" (ngModelChange)="onOptionsSelected()">
+        <option *ngFor="let tag of tagsList" [ngValue]="tag">{{tag.tagText}}</option>
+      </select>
+            
       <div class="col-sm-3">
         <div class="md-form" id="customDays">
           <input type="datetime-local" ngModel id="datetime-reminder" class="form-control" name="noteDate">
@@ -46,7 +42,7 @@
       </div>
 
       <div class="col-sm-1">
-        <button type="submit" class="btn btn-primary">+</button>
+        <button type="submit" class="btn btn-primary">{{editMode ? '\u2713' : '+'}}</button>
       </div>
 
     </div>
@@ -90,7 +86,7 @@
         <div class="col-sm-2 mb-2">
           <div class="container">
             <div class="row mt-2">
-              <button type="button" class="btn btn-primary btn-sm">Редактировать</button>
+              <button type="button" class="btn btn-primary btn-sm" (click)="onEditNote(note.noteId)">Редактировать</button>
             </div>
             <div class="row mt-2">
               <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteNote(note.noteId)">Удалить</button>

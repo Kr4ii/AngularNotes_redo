@@ -37,4 +37,9 @@ export class NotebookService {
     console.log(noteId);
     this.http.delete('https://localhost:7185/api/webnotes/' + noteId.toString()).subscribe();
   }
+
+  editNote(noteId: number, note: [{ noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]) {
+    console.log(noteId);
+    this.http.put('https://localhost:7185/api/webnotes/' + noteId.toString(), note).subscribe();
+  }
 }

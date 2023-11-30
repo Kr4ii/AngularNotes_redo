@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AngularNotes;
+using System.Globalization;
 
 namespace AngularNotes.Controllers
 {
@@ -31,6 +32,10 @@ namespace AngularNotes.Controllers
         [HttpPost]
         public void AddNote([FromBody] Note note)
         {
+            System.Console.WriteLine(note.ReminderDate.ToString());
+            note.ReminderDate = DateTime.ParseExact(note.ReminderDate.ToString(), "yyyy-MM-ddThh:mm", CultureInfo.InvariantCulture);
+            //TimeZoneInfo.ConvertTimeBySystemTimeZoneId((DateTime)note.ReminderDate, "Russian Standard Time");
+            System.Console.WriteLine(note.ReminderDate.ToString());
             db.Notes.Add(note);
             db.SaveChanges();
         }
