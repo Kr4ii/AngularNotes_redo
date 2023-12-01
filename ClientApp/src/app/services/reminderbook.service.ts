@@ -14,4 +14,10 @@ export class ReminderbookService {
   getReminders(): Observable<[{ noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]> {
     return this.http.get<[{ noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }]>('https://localhost:7185/api/webreminders');
   }
+
+  deleteReminder(noteId: number, note: { noteHeader: string; noteText: string; reminderDate: Date | undefined; notesTags: [] }) {
+    console.log(noteId);
+    note.reminderDate = undefined;
+    this.http.put('https://localhost:7185/api/webnotes/' + noteId.toString(),note).subscribe();
+  }
 }

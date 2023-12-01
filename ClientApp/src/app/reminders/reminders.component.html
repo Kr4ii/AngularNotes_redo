@@ -20,11 +20,11 @@
 
         <div class="col-sm-2">
           <div class="container">
-            <div class="row mt-2">
+            <!--<div class="row mt-2">
               <button type="button" class="btn btn-primary btn-sm">Редактировать</button>
-            </div>
-            <div class="row mt-2">
-              <button type="button" class="btn btn-danger btn-sm">Удалить</button>
+            </div>-->
+            <div class="row mt-4">
+              <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteReminder(reminder.noteId,reminder)">Удалить</button>
             </div>
           </div>
         </div>

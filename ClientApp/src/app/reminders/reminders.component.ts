@@ -15,7 +15,10 @@ export class RemindersComponent {
     reminderbook.getReminders().subscribe(reminders => {
       this.remindersList = reminders;
     })
+       
+  }
 
-    
+  onDeleteReminder(noteId: number, note: { noteId: number; noteHeader: string; noteText: string; reminderDate: Date; notesTags: [] }) {
+    this.reminderbook.deleteReminder(noteId, note);
   }
 }
